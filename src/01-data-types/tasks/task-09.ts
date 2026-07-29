@@ -9,8 +9,23 @@
 | ST003      | Budi Santoso   | 16  | Yes      |
 
 
- * Task:
- * 1. Define a proper type for the participant information.
- * 2. Store the participant data in a single collection.
- * 3. Display the participant data using console.log.
- */
+* Task:
+* 1. Define a proper type for the participant information.
+* 2. Store the participant data in a single collection.
+* 3. Display the participant data using console.log.
+*/
+type participant = {
+    studentId: string;
+    name: string;
+    age: number;
+    hasPaid: boolean;
+};
+
+
+const backendClass: participant[] = [
+    { studentId: "ST001", name: "Ahmad Fauzi", age: 16, hasPaid: true },
+    { studentId: "ST002", name: "Siti Nurhaliza", age: 17, hasPaid: false },
+    { studentId: "ST003", name: "Budi Santoso", age: 16, hasPaid: true }
+];
+
+console.log(backendClass);

@@ -14,3 +14,14 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+const friedricemeals: number = 18000;
+const bottlewater: number = 5000;
+const discount: number = 10000;
+const totalfood: number = friedricemeals * 3;
+const totaldrink: number = bottlewater * 2;
+const priceBefore: number = totaldrink + totalfood;
+const finalprice: number = priceBefore - discount;
+console.log(totalfood);
+console.log(totaldrink);
+console.log(priceBefore);
+console.log(finalprice);

@@ -8,7 +8,7 @@
 const studentName: string = "Alice";
 const age: number = 20;
 const isEnrolled: boolean = true;
-
+  
 // Arrays
 const scores: number[] = [85, 90, 78];
 const subjects: Array<string> = ["Math", "English", "Science"];

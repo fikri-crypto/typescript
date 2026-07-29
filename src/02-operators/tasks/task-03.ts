@@ -17,3 +17,14 @@
  * - Bonus
  * - Final salary
  */
+const employees: string= "dimas";
+const basicsalary: number=  500000;
+const overtime: number = 12;
+const overtimeatRate: number = 50000;
+const additional: number= 300000;
+
+
+const overtimePay: number = overtime* overtimeatRate;
+const bonus: number = overtime > 10 ? additional : 0;
+const finalSalary: number = basicsalary + overtimePay + bonus; 
+console.log("total gaji dari " + employees + "adalah" + finalSalary );  

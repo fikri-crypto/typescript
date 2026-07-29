@@ -11,3 +11,39 @@
  * 
  * display the registration data using console.log.
  */
+type programming = {
+    studentId: number;
+    fullName: string;
+    gradeLevel: number;
+    courseId: number;
+    courseTitle: string;
+    instructorName: string;
+};
+const registration: programming[] = [
+    {
+        studentId: 1223,
+        fullName: "fikri Maulana",
+        gradeLevel: 1,
+        courseId: 3213,
+        courseTitle: "Python",
+        instructorName: "Adi"
+    },
+    {
+        studentId: 123,
+        fullName: "Maulana",
+        gradeLevel: 2,
+        courseId: 33,
+        courseTitle: "TypeScript",
+        instructorName: "Gorgon"
+    },
+    {
+        studentId: 121333,
+        fullName: "Raka",
+        gradeLevel: 5,
+        courseId: 33343,
+        courseTitle: "Java",
+        instructorName: "tres"
+    },
+
+]
+console.log(registration);
