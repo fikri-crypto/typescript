@@ -1,3 +1,4 @@
+ HEAD
 # Learn TypeScript
 
 A hands-on TypeScript project for learning programming fundamentals step by step. Each module contains **examples** (ready-to-run demonstrations) and **tasks** (exercises for you to complete).
@@ -216,3 +217,6 @@ Make sure you included the full file path after `npm run example`. The path must
 ---
 
 Happy learning! 🎓
+=======
+# typescript
+ 3dff62862cd055717844edf5f6092604cdb2ee12
