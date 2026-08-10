@@ -26,3 +26,45 @@ const students = [
     { name: "Gita", score: 92 },
     { name: "Hana", score: 67 }
 ];
+let gradeACount = 0;
+let gradeBCount = 0;
+let gradeCCount = 0;
+let gradeDCount = 0;
+let highestScore = students[0].score;
+let lowestScore = students[0].score;
+let totalStudentScore = 0;
+ 
+for (let i = 0; i < students.length; i++) {
+    const student = students[i];
+    const score = student.score;
+    totalStudentScore += score;
+ 
+    if (score > highestScore) {
+        highestScore = score;
+    }
+    if (score < lowestScore) {
+        lowestScore = score;
+    }
+ 
+    if (score >= 90) {
+        gradeACount++;
+    } else if (score >= 80) {
+        gradeBCount++;
+    } else if (score >= 70) {
+        gradeCCount++;
+    } else {
+        gradeDCount++;
+    }
+}
+ 
+const averageStudentScore = totalStudentScore / students.length;
+ 
+console.log("\n=== Soal 4: Nilai Mata Kuliah ===");
+console.log("Grade A:", gradeACount);
+console.log("Grade B:", gradeBCount);
+console.log("Grade C:", gradeCCount);
+console.log("Grade D:", gradeDCount);
+console.log("Nilai tertinggi:", highestScore);
+console.log("Nilai terendah :", lowestScore);
+console.log("Rata-rata nilai:", averageStudentScore);
+ 

@@ -21,3 +21,31 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+let readyToShipCount = 0;
+let unpaidCount = 0;
+let waitingStockCount = 0;
+const readyToShipIds: string[] = [];
+ 
+for (let i = 0; i < orders.length; i++) {
+    const order = orders[i];
+ 
+    
+    if (order.paid && order.stockAvailable) {
+        readyToShipCount++;
+        readyToShipIds.push(order.id);
+    }
+ 
+    if (!order.paid) {
+        unpaidCount++;
+    }
+    if (!order.stockAvailable) {
+        waitingStockCount++;
+    }
+}
+ 
+console.log("\n=== Soal 3: Pesanan Siap Kirim ===");
+console.log("Siap kirim       :", readyToShipCount);
+console.log("Belum bayar      :", unpaidCount);
+console.log("Menunggu stok    :", waitingStockCount);
+console.log("ID siap kirim    :", readyToShipIds);
+ 

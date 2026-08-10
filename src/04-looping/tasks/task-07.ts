@@ -18,3 +18,26 @@ const attendances = [
   { name: "Gita", present: true },
   { name: "Hana", present: false }
 ];
+let presentCount = 0;
+let absentCount = 0;
+const absentNames: string[] = []; // tempat nampung nama yang tidak hadir
+ 
+for (let i = 0; i < attendances.length; i++) {
+    const student = attendances[i];
+ 
+    if (student.present) {
+        presentCount++;
+    } else {
+        absentCount++;
+        absentNames.push(student.name);
+    }
+}
+ 
+const attendancePercentage = (presentCount / attendances.length) * 100;
+ 
+console.log("\n=== Soal: Absensi Kelas ===");
+console.log("Hadir :", presentCount);
+console.log("Absen :", absentCount);
+console.log("Nama yang absen:", absentNames);
+console.log("Persentase kehadiran:", attendancePercentage + "%");
+ 

@@ -33,3 +33,37 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+const studentName: string = "Alya Putri";
+const gpa: number = 3.89;
+const familyIncome: number = 4200000;
+const competitionsCount: number = 4;
+const disciplinary: boolean = false;
+const documents: boolean = true;
+const budget: number = 500000000;
+
+const syaratGpa = gpa >= 3.75;
+const syaratIncome = familyIncome <= 5000000;
+const syaratcompetation = competitionsCount >= 3;
+const syaratDiscpline = disciplinary == false;
+const syaratDocument = documents == true; 
+
+const syaratScholarship =
+syaratDiscpline && 
+syaratGpa && 
+syaratDocument &&
+syaratIncome &&
+syaratcompetation;
+
+const beasiswa = syaratScholarship ? + 12000000 : 0; 
+const sisaBudget = budget - beasiswa; 
+
+console.log("nama siswa " + studentName);
+console.log("lulus beasiswa " + syaratScholarship ? "diterima" : " ditolak");
+console.log("jumlah angggaran " + budget)
+console.log("Sisa anggaran  " + sisaBudget)
+
+
+
+
+
+

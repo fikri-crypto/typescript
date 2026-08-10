@@ -24,3 +24,33 @@ const scores = [
     67, 79, 94, 83, 71,
     96, 65, 87, 74, 90
 ];
+let goldCount = 0;
+let silverCount = 0;
+let bronzeCount = 0;
+let noMedalCount = 0;
+let totalScore = 0;
+ 
+for (let i = 0; i < scores.length; i++) {
+    const score = scores[i];
+    totalScore += score;
+ 
+
+    if (score >= 95) {
+        goldCount++;
+    } else if (score >= 85) {
+        silverCount++;
+    } else if (score >= 75) {
+        bronzeCount++;
+    } else {
+        noMedalCount++;
+    }
+}
+ 
+const averageScore = totalScore / scores.length;
+ 
+console.log("\n=== Soal 1: Medali Kompetisi ===");
+console.log("Gold  :", goldCount);
+console.log("Silver:", silverCount);
+console.log("Bronze:", bronzeCount);
+console.log("Tanpa medali:", noMedalCount);
+console.log("Rata-rata skor:", averageScore);

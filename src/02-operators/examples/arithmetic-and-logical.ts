@@ -2,6 +2,8 @@
  * Module 02: Operators — Examples
  *
  * Run: npm run example src/02-operators/examples/arithmetic-and-logical.ts
+ npm run example src/02-operators/tasks/task-09.ts
+ * 
  */
 
 const a: number = 10;

@@ -11,7 +11,7 @@
  * | Student Name | Alya Putri |
  * | Final Score  | 82         |
  * | Attendance   | 94         |
- * | Tuition Paid | Yes        |
+ * | Tuition Paid | Yes        |    
  * 
  * Tasks:
  * 1. Declare all required variables.
@@ -20,3 +20,11 @@
  * will be display "Congratulations! You are eligible to graduate.", 
  * otherwise display "You are not eligible to graduate."
  */
+    const studentName = "Alya Putri ";
+    const finalScore = 82;
+    const attendance = 90;
+    const tuitionPaid = true;
+    console.log(studentName)
+     if (finalScore >= 75 && attendance >= 94 && tuitionPaid ) {
+      console.log("congratulations! You are eligible to graduete") 
+     } else {console.log("You are not eligible to graduete")};

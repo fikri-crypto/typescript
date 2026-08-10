@@ -34,3 +34,31 @@
  * - Free shipping eligibility
 
  */
+const mechanicalPrice = 850000;
+const mechanicalQ = 1;
+const wirelessPrice = 275000;
+const wirelessQ = 2;
+const monitorsPrice = 420000;
+const monitorsQ = 1;
+const voucher = 100000;
+const premiumMember = true;
+const premPrice = 0.10;
+const vat = 0.11;
+const reward = 50000;
+
+
+const subtotal = (mechanicalPrice * mechanicalQ) + (wirelessPrice * wirelessQ) + (monitorsPrice * monitorsQ);
+ const diskonMember = premiumMember ? subtotal * premPrice : 0;
+const diskonVoucher = subtotal - diskonMember - voucher;
+const rewardPoint = diskonVoucher / reward;
+const vatPrice = diskonVoucher * vat;
+const hargaTotal = diskonVoucher + vatPrice;
+const freeShiping = diskonVoucher >= 1500000 || premiumMember;
+
+console.log(rewardPoint);
+console.log(diskonVoucher)
+console.log(vatPrice);
+console.log(hargaTotal);
+console.log(freeShiping);   
+
+

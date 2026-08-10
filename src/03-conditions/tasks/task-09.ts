@@ -1,3 +1,5 @@
+import { toNamespacedPath } from "node:path";
+
 /**
  * A manufacturing company monitors production machines continuously.
 
@@ -36,3 +38,25 @@ Student Tasks
 - Translate every business rule into conditional statements.
 - Display the final machine status.
  */
+const powerON = true;
+const temperature = 95;
+const highVibration = false;
+const productionSpeed = 92;
+console.log("mechine");
+if(powerON){
+if (temperature > 90 ){
+    if(highVibration) {
+        console.log("emergency shutdown") 
+    } else{ 
+        console.log("colling required");
+    } 
+} else if (temperature <= 90) {
+    if(productionSpeed < 80) {
+        console.log("Performance warning")
+    } else{
+        console.log("mechine operating normally");
+    }
+
+} } else{
+    console.log("mechine off")
+};

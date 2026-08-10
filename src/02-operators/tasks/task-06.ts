@@ -13,3 +13,18 @@
  * - Discount amount
  * - Final payment
  */
+const ratePerHour: number = 8000;
+const hoursPlayed: number = 7;
+const minutesPlayed: number = 35;
+
+const totalMinutes: number = (hoursPlayed * 60) + minutesPlayed;
+const remainingMinutes: number = totalMinutes % 60;
+const billedHours: number = totalMinutes / 60;
+const paymentBeforeDiscount: number = billedHours * ratePerHour;
+const discountPercent: number = billedHours > 5 ? 0.15 : 0;
+const discountAmount: number = paymentBeforeDiscount * discountPercent;
+const finalPayment: number = paymentBeforeDiscount - discountAmount;
+ console.log(remainingMinutes);
+ console.log(finalPayment);
+
+

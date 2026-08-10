@@ -22,3 +22,14 @@
  *  - Display every parking location.
  *  - Print a blank line after each floor.
  */
+
+
+const jumlahLantai: number = 5;
+const jumlahSlotPerLantai: number = 20;
+
+for (let lantai: number = 1; lantai <= jumlahLantai; lantai++) {
+  for (let slot: number = 1; slot <= jumlahSlotPerLantai; slot++) {
+    console.log(`Floor ${lantai} - Slot ${slot}`);
+  }
+  console.log("");
+}  

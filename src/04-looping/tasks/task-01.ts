@@ -15,3 +15,12 @@
  * 3. After the loop finishes, display: "Attendance verification completed"
 
  */
+
+
+const jumlahSiswa: number = 30;
+
+for (let nomorSiswa: number = 1; nomorSiswa <= jumlahSiswa; nomorSiswa++) {
+  console.log(`Checking attendance for Student #${nomorSiswa}`);
+}
+
+console.log("Attendance verification completed.");

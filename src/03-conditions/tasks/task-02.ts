@@ -13,4 +13,10 @@
  * 2. Use an if...else statement.
  * 3. Display the evaluation result. If eligible will display "Bonus Approved", 
  * otherwise display "Bonus not approved"
- */
+ */ 
+const employeeName = "Dimas Pratama";
+const performanceScore = 78;
+console.log(employeeName)
+if (performanceScore >= 80 ) {
+    console.log("Bonus Approved") 
+ } else {console.log("Bonus not approved")};
