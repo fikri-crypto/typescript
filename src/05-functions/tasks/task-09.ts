@@ -21,6 +21,16 @@
  * - printHospitalReport() must only display results.
  * - No duplicated calculations.
  */
+type Patient = {
+    id: string,
+    name: string,
+    age: number,
+    department: string,
+    admitted: boolean,
+    bill: number
+};
+
+
 const patients = [
     {
         id: "PT001",
@@ -63,3 +73,115 @@ const patients = [
         bill: 350000
     }
 ];
+
+
+
+function countTotalPatients(st: Patient[]): number {
+    let count = 0;
+    for (let i = 0; i < st.length; i++) {
+        count++;
+    }
+    return count;
+}
+
+
+function countAdmittedPatients(st: Patient[]): number {
+    let count = 0;
+    for (let i = 0; i < st.length; i++) {
+        if (st[i].admitted) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+function countDischargedPatients(st: Patient[]): number {
+    let count = 0;
+    for (let i = 0; i < st.length; i++) {
+        if (!st[i].admitted) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+function countPatientsByDepartment(st: Patient[], department: string): number {
+    let count = 0;
+    for (let i = 0; i < st.length; i++) {
+        if (st[i].department === department) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+function findHighestBill(st: Patient[]): number {
+    let highest = st[0].bill;
+    for (let i = 1; i < st.length; i++) {
+        if (st[i].bill > highest) {
+            highest = st[i].bill;
+        }
+    }
+    return highest;
+}
+
+// 6. Tagihan terendah
+function findLowestBill(st: Patient[]): number {
+    let lowest = st[0].bill;
+    for (let i = 1; i < st.length; i++) {
+        if (st[i].bill < lowest) {
+            lowest = st[i].bill;
+        }
+    }
+    return lowest;
+}
+
+
+function calculateAverageBill(st: Patient[]): number {
+    let total = 0;
+    for (let i = 0; i < st.length; i++) {
+        total += st[i].bill;
+    }
+    return total / st.length;
+}
+
+
+function calculateTotalRevenue(st: Patient[]): number {
+    let total = 0;
+    for (let i = 0; i < st.length; i++) {
+        total += st[i].bill;
+    }
+    return total;
+}
+
+
+function getAdmittedPatientNames(st: Patient[]): string[] {
+    const names: string[] = [];
+    for (let i = 0; i < st.length; i++) {
+        if (st[i].admitted) {
+            names.push(st[i].name);
+        }
+    }
+    return names;
+}
+
+
+function printHospitalReport(st: Patient[]): void {
+    console.log("=== Laporan Harian Rumah Sakit ===");
+    console.log("Total Pasien:", countTotalPatients(st));
+    console.log("Pasien Dirawat Inap:", countAdmittedPatients(st));
+    console.log("Pasien Sudah Pulang:", countDischargedPatients(st));
+    console.log("Pasien Pediatrics:", countPatientsByDepartment(st, "Pediatrics"));
+    console.log("Pasien Cardiology:", countPatientsByDepartment(st, "Cardiology"));
+    console.log("Pasien Orthopedics:", countPatientsByDepartment(st, "Orthopedics"));
+    console.log("Tagihan Tertinggi:", findHighestBill(st));
+    console.log("Tagihan Terendah:", findLowestBill(st));
+    console.log("Rata-rata Tagihan:", calculateAverageBill(st));
+    console.log("Total Pendapatan:", calculateTotalRevenue(st));
+    console.log("Nama Pasien Dirawat Inap:", getAdmittedPatientNames(st).join(", "));
+}
+
+printHospitalReport(patients);  

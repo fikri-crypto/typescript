@@ -20,3 +20,24 @@ const attendances = [
     { name: "Dimas", present: true },
     { name: "Eka", present: false }
 ];
+function printAttendanceReport(data: typeof attendances): void {
+    let totalPresent = 0;
+    let totalAbsent = 0;
+    const absentNames: string[] = [];
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].present) {
+            totalPresent++;
+        } else {
+            totalAbsent++;
+            absentNames.push(data[i].name);
+        }
+    }
+
+    console.log("=== Laporan Kehadiran ===");
+    console.log("Total Hadir:", totalPresent);
+    console.log("Total Tidak Hadir:", totalAbsent);
+    console.log("Nama yang Tidak Hadir:", absentNames.join(", "));
+}
+
+printAttendanceReport(attendances);

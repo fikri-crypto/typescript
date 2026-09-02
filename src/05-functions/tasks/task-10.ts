@@ -33,6 +33,13 @@
  * - Use meaningful function names and parameters
  * Reuse existing functions whenever possible
  */
+type Enrollments = {
+    student:string,
+    course:string,
+    completed:boolean,
+    score: number,
+    duration:number
+};
 
 const enrollments = [
     {
@@ -91,4 +98,150 @@ const enrollments = [
         score: 70,
         duration: 20
     }
-];
+];  
+function totalEnrollment(totalEnr:Enrollments[]): number {
+    let total = 0;
+    for (let index = 0; index < totalEnr.length; index++) {
+        total++
+        
+        
+    }
+    return total;
+}
+function completeEnrollment(completedd:Enrollments[]): number {
+    let total = 0;
+    for (let index = 0; index < completedd.length; index++) {
+        if (completedd[index].completed) {
+            total++
+            
+        }
+        
+        
+    }
+    return total;
+}
+function incompleteEnrollment(incompletedd:Enrollments[]): number {
+    let total = 0;
+    for (let index = 0; index < incompletedd.length; index++) {
+        if (!incompletedd[index].completed) {
+            total++
+            
+        }
+        
+        
+    }
+    return total;
+}
+
+function completepercentage(percentage:Enrollments[]): number {
+    const completed = completeEnrollment(percentage)
+    const total = totalEnrollment(percentage)
+    return completed / total * 100;
+}
+
+function highestScore(high:Enrollments[]): number {
+   let highest = high[0].score
+   for (let index = 0; index < high.length; index++) {
+    if (high[index].score > highest) {
+        highest = high[index].score;
+        
+    }
+   
+    
+   }
+   return highest;
+}
+function lowestScore(low:Enrollments[]): number {
+   let lowest = low[0].score
+   for (let index = 0; index < low.length; index++) {
+    if (low[index].score < lowest) {
+        lowest = low[index].score;
+        
+    }
+   
+    
+   }
+   return lowest;
+}
+function averageScore(avg: Enrollments[]): number {
+    let total = 0;
+    for (let index = 0; index < avg.length; index++) {
+        total += avg[index].score;
+    }
+    return total / avg.length;
+}
+
+function passingStudents(pass: Enrollments[]): number {
+    let count = 0;
+    const passingScore = 75;
+    for (let index = 0; index < pass.length; index++) {
+        if (pass[index].score >= passingScore) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function countStudentsByCourse(st: Enrollments[], course: string): number {
+    let count = 0;
+    for (let index = 0; index < st.length; index++) {
+        if (st[index].course === course) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function averageScoreByCourse(st: Enrollments[], course: string): number {
+    let total = 0;
+    let count = 0;
+    for (let index = 0; index < st.length; index++) {
+        if (st[index].course === course) {
+            total += st[index].score;
+            count++;
+        }
+    }
+    return total / count;
+}
+
+
+function totalLearningHours(st: Enrollments[]): number {
+    let total = 0;
+    for (let index = 0; index < st.length; index++) {
+        total += st[index].duration;
+    }
+    return total;
+}
+
+function averageLearningDuration(st: Enrollments[]): number {
+    const total = totalLearningHours(st);   
+    return total / st.length;
+}
+
+function printCompletionAndAcademicReport(st: Enrollments[]): void {
+    console.log("=== Completion Statistics ===");
+    console.log("Total Enrollments:", totalEnrollment(st));
+    console.log("Completed:", completeEnrollment(st));
+    console.log("Incomplete:", incompleteEnrollment(st));
+    console.log("Completion Percentage:", completepercentage(st));
+
+    console.log("=== Academic Statistics ===");
+    console.log("Highest Score:", highestScore(st));
+    console.log("Lowest Score:", lowestScore(st));
+    console.log("Average Score:", averageScore(st));
+    console.log("Passing Students:", passingStudents(st));
+}
+
+function printCourseAndLearningReport(st: Enrollments[]): void {
+    console.log("=== Course Statistics ===");
+    console.log("TypeScript - Students:", countStudentsByCourse(st, "TypeScript"), "| Avg Score:", averageScoreByCourse(st, "TypeScript"));
+    console.log("Database - Students:", countStudentsByCourse(st, "Database"), "| Avg Score:", averageScoreByCourse(st, "Database"));
+    console.log("Backend - Students:", countStudentsByCourse(st, "Backend"), "| Avg Score:", averageScoreByCourse(st, "Backend"));
+
+    console.log("=== Learning Statistics ===");
+    console.log("Total Learning Hours:", totalLearningHours(st));
+    console.log("Average Learning Duration:", averageLearningDuration(st));
+}
+
+printCompletionAndAcademicReport(enrollments);
+printCourseAndLearningReport(enrollments);
