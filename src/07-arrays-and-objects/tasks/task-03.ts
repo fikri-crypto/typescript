@@ -23,3 +23,5 @@ const attendance = [
     { studentId: 3, status: "present" },
     { studentId: 4, status: "late" },
 ];
+
+const studentPresent = students

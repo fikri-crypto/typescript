@@ -1,4 +1,4 @@
-    /**
+        /**
      * An online store wants to analyze today's sales transactions. 
      * Each transaction amount is stored in an array.
      * ---------------------------------

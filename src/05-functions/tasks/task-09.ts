@@ -128,7 +128,7 @@ function findHighestBill(st: Patient[]): number {
     return highest;
 }
 
-// 6. Tagihan terendah
+
 function findLowestBill(st: Patient[]): number {
     let lowest = st[0].bill;
     for (let i = 1; i < st.length; i++) {

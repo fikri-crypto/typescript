@@ -27,4 +27,4 @@ const cart = [
         price: 2500000,
         quantity: 1,
     },
-];
+];  

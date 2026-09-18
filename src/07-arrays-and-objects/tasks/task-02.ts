@@ -8,6 +8,8 @@
  * 5. Sort available products from most expensive → cheapest.
  */
 
+import { log } from "node:console";
+
 const products = [
     {
         id: 1,
@@ -41,7 +43,33 @@ const products = [
         id: 5,
         name: "Microphone",
         category: "Audio",
-        price: 850000,
+        price: 850000,      
         stock: 3,
     },
 ];
+const availableProduct = products.filter(
+    products => products.stock > 0
+);
+console.log(availableProduct);
+
+const productss = products.map(
+    products => products.name
+);
+console.log(productss);
+
+const totalValue = products.reduce(
+    ( total, product) => total + (product.stock * product.price ),0
+       
+);
+console.log(totalValue);
+
+const sortedByPrice = availableProduct.sort(
+    (a, b) => b.price - a.price
+);
+console.log(sortedByPrice);
+
+
+
+
+
+

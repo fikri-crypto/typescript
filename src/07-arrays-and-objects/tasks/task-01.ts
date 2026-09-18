@@ -15,6 +15,8 @@
  * 4. Calculate the average score.
  */
 
+import { stdout } from "node:process";
+
 const students = [
   { name: "Andi", score: 85 },
   { name: "Budi", score: 62 },
@@ -22,3 +24,36 @@ const students = [
   { name: "Deni", score: 74 },
   { name: "Eka", score: 55 },
 ];
+
+const studentName = students.map(
+  students => students.name
+);
+console.log(studentName);
+
+const passedStudent = students.map(
+  students => students.score >= 70
+);
+
+console.log(passedStudent);
+
+const findCrita = students.find(
+  students => students.name === "citra" 
+); 
+console.log(findCrita);
+
+const avarage = students.reduce(
+  (total,student) => total + student.score, 0
+); 
+
+const avarageScore = avarage / students.length;
+
+console.log("Avarage " , avarageScore)
+
+
+
+
+
+
+
+
+
